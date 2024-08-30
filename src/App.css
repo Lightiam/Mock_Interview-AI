@@ -19,7 +19,7 @@ body {
 /* Top control bar */
 .control-bar {
   background-color: #2C2C2C;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,6 +27,7 @@ body {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 60px; /* Fixed height for consistency */
 }
 
 .control-bar .left-section,
@@ -36,8 +37,12 @@ body {
 }
 
 .control-bar .right-section {
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: 0.5rem; /* Add space between control buttons */
+}
+
+.control-bar .title,
+.control-bar .timer {
+  margin-right: 1rem;
 }
 
 .control-bar button {
