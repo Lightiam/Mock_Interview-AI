@@ -18,16 +18,18 @@ body {
 
 /* Top control bar */
 .control-bar {
-  background-color: #2C2C2C;
-  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.75rem 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 60px; /* Fixed height for consistency */
+  height: 70px; /* Increased height for better visibility */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .control-bar .left-section,
@@ -37,47 +39,57 @@ body {
 }
 
 .control-bar .right-section {
-  gap: 0.5rem; /* Add space between control buttons */
+  gap: 0.75rem; /* Increased space between control buttons */
 }
 
-.control-bar .title,
+.control-bar .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 1.5rem;
+}
+
 .control-bar .timer {
-  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
 }
 
 .control-bar button {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
   border: none;
   color: #ffffff;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 50%;
   transition: background-color 0.2s, color 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.25rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .control-bar button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
 }
 
 .control-bar .leave-button {
   background-color: #E74C3C;
   color: #ffffff;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 50%;
   font-weight: bold;
   transition: background-color 0.2s, transform 0.2s;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 
 .control-bar .leave-button:hover {
   background-color: #c0392b;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 /* Main content area */
@@ -85,7 +97,7 @@ body {
   display: flex;
   flex: 1;
   overflow: hidden;
-  margin-top: 60px; /* Adjust for the height of the top control bar */
+  position: relative; /* Allow absolute positioning of children */
 }
 
 /* Video area */
@@ -94,16 +106,20 @@ body {
   display: flex;
   padding: 1rem;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px; /* To account for the control bar */
 }
 
 .video-container {
-  flex: 1;
-  background-color: #2C2C2C;
-  border-radius: 0.5rem;
+  flex: 0 1 48%; /* Slightly increased width */
+  max-width: 720px; /* Increased max-width for larger screens */
+  background-color: #1E1E1E; /* Darker background */
+  border-radius: 0.75rem; /* Slightly increased border radius */
   overflow: hidden;
   position: relative;
   aspect-ratio: 16 / 9;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
 }
 
 .video-placeholder {
@@ -112,9 +128,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2C2C2C;
-  font-size: 2rem;
-  color: #808080;
+  background-color: #1E1E1E; /* Darker background */
+  font-size: 4rem; /* Increased font size */
+  color: #4A4A4A; /* Darker placeholder color */
+}
+
+.video-placeholder img {
+  width: 128px; /* Set a fixed size for the Pally Bot avatar */
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* Sidebar */
