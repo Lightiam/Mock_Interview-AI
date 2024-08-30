@@ -2,6 +2,10 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Mic, MicOff, Video, VideoOff, Share, MoreVertical, Users, MessageSquare, Smile, FileText, Maximize2, Send, User, X } from 'lucide-react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
+// MockInterview component: Simulates a one-on-one interview experience
+// Recent changes:
+// 1. Removed all participants except for the avatar (Pally Bot) and user
+// 2. Relocated control elements (mute, video, etc.) to the top of the interface
 const MockInterview = () => {
   const [conversation, setConversation] = useState([]);
   const [userInput, setUserInput] = useState('');
