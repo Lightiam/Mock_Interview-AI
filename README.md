@@ -1,8 +1,21 @@
 # Mock Interview Application
 
-This project is a React-based mock interview application that simulates a video call interface with a virtual interviewer.
+This project is a React-based mock interview application that simulates a video call interface with a virtual AI interviewer. It features a modern, user-friendly interface with a horizontal control layout and enhanced functionality for a realistic interview experience.
 
-## Running the Application
+## Key Features
+
+- Horizontal control bar at the top of the interface for easy access to essential functions
+- One-on-one interaction between the user and the AI interviewer (Pally Bot)
+- Video and audio controls for a simulated video call experience
+- Speech recognition for transcribing user responses
+- Chat functionality for text-based communication
+- Dark theme for reduced eye strain
+
+## Live Demo
+
+You can access the live application at: [https://lightiam.github.io/Mock_Interview-AI/](https://lightiam.github.io/Mock_Interview-AI/)
+
+## Running the Application Locally
 
 Follow these steps to run the application on your local machine:
 
@@ -53,6 +66,10 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run deploy`
+
+Deploys the application to GitHub Pages. This script is set up to build the application and then push the built files to the `gh-pages` branch of your repository.
 
 ## Learn More
 
