@@ -125,9 +125,9 @@ const MockInterview = () => {
   }
 
   return (
-    <div className="App flex flex-col h-screen bg-[#1E1E1E] text-white">
+    <div className="App flex flex-col h-screen bg-[#1E1E1E] text-white pt-[70px]">
       {/* Control bar */}
-      <div className="control-bar fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 flex items-center justify-between px-6 py-4">
+      <div className="control-bar fixed top-0 left-0 right-0 bg-black bg-opacity-80 flex items-center justify-between px-6 py-4">
         <div className="flex items-center">
           <div className="title text-xl font-bold mr-4">MI 2021</div>
           <div className="timer text-sm font-semibold bg-[#2C2C2C] px-3 py-1 rounded-full">00:01:16</div>
