@@ -105,16 +105,16 @@ const MockInterview = () => {
   }
 
   return (
-    <div className="App flex flex-col h-screen bg-[#1E1E1E] text-white">
-      {/* Top control bar */}
-      <div className="control-bar flex justify-between items-center px-4 py-2 bg-[#2C2C2C] border-b border-[#3A3A3A]">
-        <div className="flex items-center space-x-4">
-          <div className="title text-xl font-bold">Pally Bot Interview</div>
+    <div className="App flex h-screen bg-[#1E1E1E] text-white">
+      {/* Vertical control bar */}
+      <div className="control-bar flex flex-col justify-between items-center py-4 bg-[#2C2C2C] border-r border-[#3A3A3A]">
+        <div className="flex flex-col items-center space-y-4">
+          <div className="title text-xl font-bold">Pally Bot</div>
           <div className="time text-sm text-gray-400">
             {new Date().toLocaleTimeString()}
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex flex-col items-center space-y-4">
           <button className="control-button" title="Participants">
             <Users size={20} />
           </button>
@@ -147,10 +147,10 @@ const MockInterview = () => {
           <button className="control-button" title="More Options">
             <MoreVertical size={20} />
           </button>
-          <button className="leave-button bg-[#E74C3C] hover:bg-[#C0392B] text-white px-4 py-2 rounded-md transition-colors duration-200">
-            Leave
-          </button>
         </div>
+        <button className="leave-button bg-[#E74C3C] hover:bg-[#C0392B] text-white p-2 rounded-full transition-colors duration-200">
+          Leave
+        </button>
       </div>
 
       {/* Main content area */}
