@@ -7,16 +7,20 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 // 1. Simplified interface to focus on a one-on-one interaction:
 //    - Removed all participants except for the AI interviewer (Pally Bot) and the user
 //    - Updated video containers to display only two participants side by side
+//    - Eliminated unnecessary UI elements to reduce distractions
 // 2. Improved user experience and layout:
 //    - Relocated control elements (mute, video, etc.) to the top of the interface
 //    - Implemented a horizontal control bar for easy access to essential functions
-//      This new layout mimics popular video conferencing tools for familiarity
+//    - This new layout mimics popular video conferencing tools for familiarity and ease of use
+//    - Enhanced visibility and accessibility of control buttons
 // 3. Enhanced interview simulation:
 //    - Integrated speech recognition for transcribing user responses in real-time
 //    - Implemented a chat interface for text-based communication as an alternative
 //    - Added a series of predefined interview questions for a structured experience
+//    - Improved the flow of conversation between the AI interviewer and the user
 // 4. Responsive design:
 //    - Ensured the layout adapts well to different screen sizes for better accessibility
+//    - Optimized video container sizes for various device dimensions
 
 const MockInterview = () => {
   const [conversation, setConversation] = useState([]);

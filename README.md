@@ -13,6 +13,16 @@ This project is a React-based mock interview application that simulates a one-on
 - Responsive design that adapts to different screen sizes
 - Dark theme for reduced eye strain
 
+## User Interface
+
+The application features a streamlined interface designed for optimal user experience:
+
+- A horizontal control bar at the top of the screen provides quick access to essential functions such as mute/unmute, video on/off, screen sharing, and more.
+- The main area displays two video containers side by side: one for the user and one for the AI interviewer (Pally Bot).
+- A chat sidebar on the right allows for text-based communication and displays the conversation history.
+
+This layout ensures all key elements are easily accessible while maintaining a clean, distraction-free environment for the mock interview.
+
 ## Live Demo
 
 You can access the live application at: [https://lightiam.github.io/Mock_Interview-AI/](https://lightiam.github.io/Mock_Interview-AI/)
