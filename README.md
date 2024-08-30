@@ -1,14 +1,16 @@
 # Mock Interview Application
 
-This project is a React-based mock interview application that simulates a video call interface with a virtual AI interviewer. It features a modern, user-friendly interface with a horizontal control layout and enhanced functionality for a realistic interview experience.
+This project is a React-based mock interview application that simulates a one-on-one video call interface with a virtual AI interviewer. It features a modern, user-friendly interface with a horizontal control layout and enhanced functionality for a realistic interview experience.
 
 ## Key Features
 
-- Horizontal control bar at the top of the interface for easy access to essential functions
+- Horizontal control bar at the top of the interface for easy access to essential functions, mimicking popular video conferencing tools
 - One-on-one interaction between the user and the AI interviewer (Pally Bot)
 - Video and audio controls for a simulated video call experience
-- Speech recognition for transcribing user responses
-- Chat functionality for text-based communication
+- Real-time speech recognition for transcribing user responses
+- Chat functionality for text-based communication as an alternative to speech
+- Series of predefined interview questions for a structured experience
+- Responsive design that adapts to different screen sizes
 - Dark theme for reduced eye strain
 
 ## Live Demo
