@@ -125,116 +125,118 @@ const MockInterview = () => {
   }
 
   return (
-    <div className="App flex flex-col h-screen bg-[#1E1E1E] text-white pt-[70px]">
-      {/* Control bar */}
-      <div className="control-bar fixed top-0 left-0 right-0 bg-black bg-opacity-80 flex items-center justify-between px-6 py-4">
+    <>
+      <div className="control-bar fixed top-0 left-0 right-0 bg-black bg-opacity-80 flex items-center justify-between px-6 py-3 w-full z-[10000]">
         <div className="flex items-center">
-          <div className="title text-xl font-bold mr-4">MI 2021</div>
-          <div className="timer text-sm font-semibold bg-[#2C2C2C] px-3 py-1 rounded-full">00:01:16</div>
+          <h1 className="text-xl font-bold mr-4">Mock Interview</h1>
+          <div className="bg-gray-700 px-3 py-1 rounded-full text-sm">00:15:30</div>
         </div>
-        <div className="flex items-center space-x-3">
-          <button className={`control-button p-2.5 rounded-full ${isListening ? 'bg-green-600' : 'bg-[#2C2C2C]'} hover:bg-opacity-90 transition-colors duration-200`} onClick={toggleListening} title={isListening ? "Mute" : "Unmute"}>
+        <div className="flex items-center space-x-2">
+          <button className={`control-button p-2 rounded-full ${isListening ? 'bg-green-600' : 'bg-[#2C2C2C]'} hover:bg-opacity-90 transition-colors duration-200`} onClick={toggleListening} title={isListening ? "Mute" : "Unmute"}>
             {isListening ? <Mic size={18} /> : <MicOff size={18} />}
           </button>
-          <button className={`control-button p-2.5 rounded-full ${isCameraOn ? 'bg-green-600' : 'bg-[#2C2C2C]'} hover:bg-opacity-90 transition-colors duration-200`} onClick={toggleCamera} title={isCameraOn ? "Stop Video" : "Start Video"}>
+          <button className={`control-button p-2 rounded-full ${isCameraOn ? 'bg-green-600' : 'bg-[#2C2C2C]'} hover:bg-opacity-90 transition-colors duration-200`} onClick={toggleCamera} title={isCameraOn ? "Stop Video" : "Start Video"}>
             {isCameraOn ? <Video size={18} /> : <VideoOff size={18} />}
           </button>
-          <button className="control-button p-2.5 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Share Screen">
+          <button className="control-button p-2 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Share Screen">
             <Share size={18} />
           </button>
-          <button className="control-button p-2.5 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Participants">
+          <button className="control-button p-2 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Participants">
             <Users size={18} />
           </button>
-          <button className="control-button p-2.5 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Chat">
+          <button className="control-button p-2 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Chat">
             <MessageSquare size={18} />
           </button>
-          <button className="control-button p-2.5 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Reactions">
+          <button className="control-button p-2 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Reactions">
             <Smile size={18} />
           </button>
-          <button className="control-button p-2.5 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Notes">
+          <button className="control-button p-2 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="Notes">
             <FileText size={18} />
           </button>
-          <button className="control-button p-2.5 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="More Options">
+          <button className="control-button p-2 rounded-full bg-[#2C2C2C] hover:bg-opacity-90 transition-colors duration-200" title="More Options">
             <MoreVertical size={18} />
           </button>
-          <button className="leave-button bg-[#E74C3C] hover:bg-[#C0392B] text-white p-2.5 rounded-full ml-3 transition-colors duration-200" title="Leave Call">
+          <button className="leave-button bg-[#E74C3C] hover:bg-[#C0392B] text-white p-2 rounded-full ml-2 transition-colors duration-200" title="Leave Call">
             <X size={18} />
           </button>
         </div>
       </div>
-
-      <div className="main-content flex flex-1 overflow-hidden relative">
-        {/* Video containers */}
-        <div className="video-area flex-1 flex justify-center items-center p-4">
-          <div className="video-container w-[48%] aspect-video bg-[#1E1E1E] overflow-hidden relative rounded-xl shadow-md mr-2">
-            {isCameraOn ? (
-              <video ref={videoRef} autoPlay muted className="w-full h-full object-cover" />
-            ) : (
-              <div className="video-placeholder w-full h-full flex items-center justify-center">
-                <User size={128} className="text-gray-500" />
-              </div>
-            )}
-            <div className="absolute top-2 right-2">
-              <button className="p-1 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition-colors duration-200">
-                <Maximize2 size={16} className="text-white" />
-              </button>
-            </div>
-            <div className="name-tag absolute bottom-4 left-4 bg-black bg-opacity-50 px-3 py-1 rounded-full flex items-center space-x-2">
-              <Mic size={14} className={isListening ? "text-green-500" : "text-white"} />
-              <span className="text-xs font-semibold">You</span>
-            </div>
-          </div>
-          <div className="video-container w-[48%] aspect-video bg-[#1E1E1E] overflow-hidden relative rounded-xl shadow-md ml-2">
-            <div className="video-placeholder w-full h-full flex items-center justify-center">
-              <img src={process.env.PUBLIC_URL + '/images/pally-bot-avatar.png'} alt="Pally Bot" className="w-56 h-56 rounded-full object-cover" />
-            </div>
-            <div className="absolute top-2 right-2">
-              <button className="p-1 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition-colors duration-200">
-                <Maximize2 size={16} className="text-white" />
-              </button>
-            </div>
-            <div className="name-tag absolute bottom-4 left-4 bg-black bg-opacity-50 px-3 py-1 rounded-full flex items-center space-x-2">
-              <Mic size={14} className="text-green-500" />
-              <span className="text-xs font-semibold">Pally Bot</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right sidebar */}
-        <div className="right-sidebar w-80 bg-[#2C2C2C] border-l border-[#3A3A3A] flex flex-col">
-          {/* Chat area */}
-          <div className="chat-area flex-1 p-4 flex flex-col">
-            <h3 className="text-lg font-semibold mb-4 text-gray-300">Chat</h3>
-            {/* Conversation display */}
-            <div className="chat-messages flex-1 overflow-y-auto mb-4 p-2 bg-[#3A3A3A] rounded-lg">
-              {conversation.map((message, index) => (
-                <div key={index} className={`message ${message.speaker === 'user' ? 'user bg-blue-600 ml-auto' : 'bot bg-gray-700'} max-w-[80%] rounded-lg p-2 mb-2`}>
-                  <span>{message.text}</span>
+      <div className="App flex flex-col h-screen bg-[#1E1E1E] text-white pt-[60px]">
+        <div className="main-content flex flex-1 overflow-hidden">
+          <div className="video-area flex-1 flex justify-center items-center p-2">
+            {/* Video containers */}
+            <div className="flex justify-center items-center w-full h-full">
+              <div className="video-container w-[49%] h-[calc(100vh-130px)] bg-[#1E1E1E] overflow-hidden relative rounded-xl shadow-md mr-1">
+                {isCameraOn ? (
+                  <video ref={videoRef} autoPlay muted className="w-full h-full object-cover" />
+                ) : (
+                  <div className="video-placeholder w-full h-full flex items-center justify-center">
+                    <User size={160} className="text-gray-500" />
+                  </div>
+                )}
+                <div className="absolute top-2 right-2">
+                  <button className="p-1.5 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition-colors duration-200">
+                    <Maximize2 size={18} className="text-white" />
+                  </button>
                 </div>
-              ))}
+                <div className="name-tag absolute bottom-4 left-4 bg-black bg-opacity-50 px-3 py-1.5 rounded-full flex items-center space-x-2">
+                  <Mic size={16} className={isListening ? "text-green-500" : "text-white"} />
+                  <span className="text-sm font-semibold">You</span>
+                </div>
+              </div>
+              <div className="video-container w-[49%] h-[calc(100vh-130px)] bg-[#1E1E1E] overflow-hidden relative rounded-xl shadow-md ml-1">
+                <div className="video-placeholder w-full h-full flex items-center justify-center">
+                  <img src={process.env.PUBLIC_URL + '/images/pally-bot-avatar.png'} alt="Pally Bot" className="w-64 h-64 rounded-full object-cover" />
+                </div>
+                <div className="absolute top-2 right-2">
+                  <button className="p-1.5 bg-black bg-opacity-50 rounded-full hover:bg-opacity-70 transition-colors duration-200">
+                    <Maximize2 size={18} className="text-white" />
+                  </button>
+                </div>
+                <div className="name-tag absolute bottom-4 left-4 bg-black bg-opacity-50 px-3 py-1.5 rounded-full flex items-center space-x-2">
+                  <Mic size={16} className="text-green-500" />
+                  <span className="text-sm font-semibold">Pally Bot</span>
+                </div>
+              </div>
             </div>
+          </div>
 
-            {/* Chat input */}
-            <div className="chat-input flex w-full">
-              <input
-                type="text"
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                placeholder="Type your message..."
-                className="flex-1 bg-[#3A3A3A] text-white placeholder-gray-500 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-              <button
-                onClick={handleSendMessage}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg transition-colors duration-200 flex items-center"
-              >
-                <Send size={20} />
-              </button>
+          {/* Right sidebar */}
+          <div className="right-sidebar w-80 bg-[#2C2C2C] border-l border-[#3A3A3A] flex flex-col">
+            {/* Chat area */}
+            <div className="chat-area flex-1 p-4 flex flex-col">
+              <h3 className="text-lg font-semibold mb-4 text-gray-300">Chat</h3>
+              {/* Conversation display */}
+              <div className="chat-messages flex-1 overflow-y-auto mb-4 p-2 bg-[#3A3A3A] rounded-lg">
+                {conversation.map((message, index) => (
+                  <div key={index} className={`message ${message.speaker === 'user' ? 'user bg-blue-600 ml-auto' : 'bot bg-gray-700'} max-w-[80%] rounded-lg p-2 mb-2`}>
+                    <span>{message.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Chat input */}
+              <div className="chat-input flex w-full">
+                <input
+                  type="text"
+                  value={userInput}
+                  onChange={(e) => setUserInput(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                  placeholder="Type your message..."
+                  className="flex-1 bg-[#3A3A3A] text-white placeholder-gray-500 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+                <button
+                  onClick={handleSendMessage}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg transition-colors duration-200 flex items-center"
+                >
+                  <Send size={20} />
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
